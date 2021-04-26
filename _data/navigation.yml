@@ -1,0 +1,8 @@
+- label: Home
+  url: "/"
+- label: Posts
+  url: "/posts"
+- label: About
+  url: "/about"
+- label: Contact
+  url: "/contact"

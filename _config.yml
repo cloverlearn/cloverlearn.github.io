@@ -1,0 +1,28 @@
+# Name of website
+title: CloverLearn
+author: Yasas Senarath
+contact:
+  url: ysenarath.93@gmail.com
+
+social:
+  twitter: cloverlearn
+  github: cloverlearn
+
+# Footer options
+footer:
+  copyright: 
+    visible: true  # whether to include copyright
+
+plugins:
+  - jekyll-remote-theme
+  - jekyll-paginate
+
+remote_theme: cloverlearn/cloverx
+
+collections:
+  authors:
+    output: true
+
+# Pagination Options
+paginate: 10
+paginate_path: "/posts/page:num"
