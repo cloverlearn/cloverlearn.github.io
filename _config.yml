@@ -16,6 +16,7 @@ footer:
 plugins:
   - jekyll-remote-theme
   - jekyll-paginate
+  - jekyll-archives
 
 remote_theme: cloverlearn/cloverx
 
@@ -26,3 +27,11 @@ collections:
 # Pagination Options
 paginate: 10
 paginate_path: "/posts/page:num"
+
+jekyll-archives:
+  enabled: all
+  layout: archive
+  permalinks:
+    year: '/year/:year/'
+    tag: '/tags/:name/'
+    category: '/category/:name/'

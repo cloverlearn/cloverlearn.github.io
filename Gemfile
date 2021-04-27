@@ -5,6 +5,7 @@ ruby RUBY_VERSION
 group :jekyll_plugins do
     gem "jekyll-remote-theme"
     gem "jekyll-paginate"
+    gem "jekyll-archives"
 end
 
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
