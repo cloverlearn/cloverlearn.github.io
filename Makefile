@@ -1,5 +1,6 @@
 SITE= _site
 RM= rm -rf
+ARCHIVES= category
 
 all : build
 
@@ -17,4 +18,5 @@ push:
 	git push
 
 clean :
+	$(RM) $(ARCHIVES)
 	$(RM) $(SITE)
