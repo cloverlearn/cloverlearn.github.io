@@ -2,7 +2,7 @@ SITE= _site
 RM= rm -rf
 ARCHIVES= category
 
-all : build
+all : publish
 
 build :
 	jekyll build --destination $(SITE)
