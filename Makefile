@@ -2,20 +2,23 @@ SITE= _site
 RM= rm -rf
 ARCHIVES= category
 
-all : publish
+all : build
 
-build :
+build: clean build_jekyll archives
+
+build_jekyll:
 	jekyll build --destination $(SITE)
 
-publish: clean build archives push
-
 archives:
-	cp -r _site/category .
-	git add category
+	cp -r _site/$(ARCHIVES) .
+	git add $(ARCHIVES)
 
 push:
 	git commit -m "Updates"
 	git push
+
+serve:
+	bundle exec jekyll serve
 
 clean :
 	$(RM) $(ARCHIVES)
