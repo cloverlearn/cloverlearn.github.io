@@ -1,5 +1,5 @@
 watch:
-	staticjinja watch --static static --srcpath templates --outpath docs
+	staticjinja watch
 
 build:
-	staticjinja build --srcpath templates --outpath docs --static static
+	staticjinja build --srcpath templates --outpath docs
