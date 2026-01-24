@@ -1,7 +1,62 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
 [project]
-name = "cloverlearn-github-io"
-version = "0.1.0"
-description = "Add your description here"
+name = "CloverLearn"
+dynamic = ["version"]
+description = ''
 readme = "README.md"
 requires-python = ">=3.10"
-dependencies = ["staticjinja>=5.0.0"]
+license = "MIT"
+keywords = []
+authors = [
+    { name = "Yasas Senarath", email = "12231659+ysenarath@users.noreply.github.com" },
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = [
+    "click>=8.3.1",
+    "flask>=3.1.2",
+ "staticjinja>=5.0.0",
+]
+
+[project.urls]
+Documentation = "https://github.com/cloverlearn/cloverlearn.github.io#readme"
+Issues = "https://github.com/cloverlearn/cloverlearn.github.io/issues"
+Source = "https://github.com/cloverlearn/cloverlearn.github.io"
+
+[tool.hatch.version]
+path = "src/cloverlearn/__init__.py"
+
+[tool.hatch.envs.types]
+extra-dependencies = ["mypy>=1.0.0"]
+[tool.hatch.envs.types.scripts]
+check = "mypy --install-types --non-interactive {args:src/cloverlearn tests}"
+
+[tool.coverage.run]
+source_pkgs = ["cloverlearn", "tests"]
+branch = true
+parallel = true
+omit = []
+
+[tool.coverage.paths]
+cloverlearn = ["src/cloverlearn", "*/cloverlearn/src/cloverlearn"]
+tests = ["tests", "*/cloverlearn/tests"]
+
+[tool.coverage.report]
+exclude_lines = ["no cov", "if __name__ == .__main__.:", "if TYPE_CHECKING:"]
+
+[project.scripts]
+cloverlearn = "cloverlearn.__main__:cli"
+
+[tool.hatch.envs.default.scripts]
+watch = "uv run cloverlearn watch"
+serve = "uv run cloverlearn serve"

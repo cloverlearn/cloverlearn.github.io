@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title }}</title>
+    <link href="static/css/bootstrap.css" rel="stylesheet" crossorigin="anonymous">
+</head>
+
+<body>
+    {% block header %}{% include "layout/header.html" %}{% endblock %}
+    {% block content %}{% endblock %}
+    {% block footer %}{% include "layout/footer.html" %}{% endblock %}
+    <script src="static/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
